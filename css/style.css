@@ -662,7 +662,7 @@ header .bottom-header .nav .nav-links li.active a{
     font-size: 0.95rem;
     margin-bottom: 0.3rem;
     color: var(--heading-color);
-    max-width: 18ch;    /* wrap after ~22 characters */
+    max-width: 170px;    /* wrap after ~22 characters */
     white-space: normal;
     overflow-wrap: break-word;
 }
