@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayman | Mini Market</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+        <header>
+            <div class="top-header">
+                <div class="container">
+                    <!-- <a href="" class="logo"> <img src="assets/icons/logo.png" alt="Ayman | Mini Market logo"></a> -->
+                    <a href="" class="logo"><h1>AYMAN</h1></a>
+                    <form action="" class="search-box">
+                        <div class="select-box">
+                            <select name="category" id="category">
+                                <option value="All Categories">All Categories</option>
+                                <option value="Electronics & Digital">Electronics & Digital</option>
+                                <option value="Fashion & Clothing">Fashion & Clothing</option>
+                                <option value="Phone & Tablet">Phone & Tablet</option>
+                                <option value="Television & Monitor">Television & Monitor</option>
+                                <option value="Jewelry & Watches">Jewelry & Watches</option>
+                                <option value="Washing & Machines">Washing Machines</option>
+                                <option value="Toys & Hobbies">Toys & Hobbies</option>
+                            </select>
+                        </div>
+                        <input type="text" name="search" placeholder="Search for products..." id="input-search">
+                        <button type="submit" class="search-btn">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
+                    <div class="header-icons">
+                        <div class="icon">
+                            <a href="#">
+                                <i class="fa-regular fa-heart"></i>
+                                <span class="count count-favorites">0</span>
+                            </a>
+                        </div>
+                        <div class="icon" id="cart-icon">
+                            <a href="#">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <span class="count count-cart">0</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-header">
+                <div class="container">
+                    <div class="nav">
+                        <div class="category-btn">
+                            <i class="fa-solid fa-bars"></i>
+                            <p>Browse Category</p>
+                            <i class="fa-solid fa-caret-down"></i>
+                        </div>
+
+                        <ul class="nav-links">
+                            <li class="active"><a href="#">Home</a></li>
+                            <li><a href="#">Products</a></li>
+                            <li><a href="#">Cards</a></li>
+                            <li><a href="#">Favorites</a></li>
+                        </ul>
+                    </div>
+                    <div class="singin-singup btns">
+                        <a href="#" class="btn">Sign In <i class="fa-solid fa-right-to-bracket"></i></a>
+                        <a href="#" class="btn">Sign Up <i class="fa-solid fa-user-plus"></i></a>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+    <!-- hero section with image and text on it in left -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-text">
+                <h1>Best Quality <br> <span>Electronics</span> <br> Products</h1>
+                <p>Discover the latest smartphones, smartwatches, earbuds, and more all in one place.
+                Upgrade your lifestyle with premium electronics designed for speed, style, and performance.</p>
+                <a href="#" class="btn">Shop Now <i class="fa-solid fa-bag-shopping"></i></a>
+            </div>
+            <div class="hero-image">
+                <img src="assets/images/hero.webp" alt="Hero Image"> 
+            </div>
+        </div>
+        </section>
+
+        <!--Home Products -->
+    <section class="products-section">
+        <h2>🔥 Trending <span>Now</span></h2>
+        <div id="home-products" class="products-container">
+        </div>
+        <div class="view-more-container">
+            <a href="products.html" class="view-more-btn">View More &gt;&gt;&gt;</a>
+        </div>
+    </section>
+
+    <!-- cart section -->
+    <div class="cart">
+        <div class="top-cart">
+            <h3 class="cart-title">Number of items in your cart : <span class="cart-count">0</span></h3>
+            <span class="close-cart"><i class="fa-solid fa-circle-xmark"></i></span>
+        </div>
+
+        <div class="cart-items">
+            <!-- Cart items will be dynamically added here -->
+            <div class="cart-item">
+                <img src="assets/images/4.png" alt="">
+                <div class="content">
+                    <h4>this is my product title</h4>
+                    <p class="price">$56.00</p>
+                    <div class="quantity">
+                        <button class="decrease">-</button>
+                        <span class="quantity-value">1</span>
+                        <button class="increase">+</button>
+                    </div>
+                </div>
+                <button class="remove-cart-item"><i class="fa-solid fa-trash-can"></i></button>
+            </div>
+            <div class="cart-item">
+                <img src="assets/images/4.png" alt="">
+                <div class="content">
+                    <h4>this is my product title</h4>
+                    <p class="price">$56.00</p>
+                    <div class="quantity">
+                        <button class="decrease">-</button>
+                        <span class="quantity-value">1</span>
+                        <button class="increase">+</button>
+                    </div>
+                </div>
+                <button class="remove-cart-item"><i class="fa-solid fa-trash-can"></i></button>
+            </div>
+        </div>
+
+        <div class="cart-footer">
+            <div class="total-details">
+                <h3 class="total-word">Total</h3>
+                <h3>$ <span class="total-price">0.00</span></h3>
+            </div>
+            <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+</body>
+<script src="js/prendering.js"></script>
+<script src="js/cart.js"></script>
+</html>
