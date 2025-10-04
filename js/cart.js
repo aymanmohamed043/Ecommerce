@@ -90,6 +90,10 @@ cartContainer.addEventListener("click", (e) => {
 
     if (e.target.closest(".remove-cart-item")) {
         cartItems = cartItems.filter(i => i.id != id);
+        itemElement.classList.remove("active");
+        document.querySelector(`.add-to-cart[data-id="${id}"]`).classList.remove("active");
+        document.querySelector(`.add-to-cart[data-id="${id}"]`).innerHTML = `<i class="fa-solid fa-cart-plus"></i> Add to Cart`;
+        document.querySelector(`.add-to-cart[data-id="${id}"]`).disabled = false;
     }
 
     renderCart();
@@ -109,7 +113,7 @@ document.addEventListener("click", async (e) => {
             addToCart(product);
 
             button.classList.add("active");
-            button.innerHTML = `<i class="fa-solid fa-check"></i> Added`;
+            button.innerHTML = `<i class="fa-solid fa-check"></i> In Cart`;
             button.disabled = true;
 
         } catch (error) {
