@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products</title>
+    <title>Favorites</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/favorites.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
 <body>
@@ -40,7 +41,7 @@
                             </a>
                         </div>
                         <div class="icon" id="cart-icon">
-                            <a href="#">
+                            <a href="favorites.html">
                                 <i class="fa-solid fa-cart-shopping"></i>
                                 <span class="count count-cart" id="cart-count">0</span>
                             </a>
@@ -72,34 +73,19 @@
             </div>
         </header>
 
-    <!--Home Products -->
-    <section class="products-section">
-        <h2> All <span>Products</span></h2>
-        <div id="home-products" class="products-container">
+    <!-- Favorites Products -->
+    <div id="favorites-container" class="products-grid">
+            <!-- Favorites will be dynamically loaded here -->
         </div>
-    </section>
-
-    <!-- cart section -->
-    <div class="cart">
-        <div class="top-cart">
-            <h3 class="cart-title">Number of items in your cart : <span class="cart-count">0</span></h3>
-            <span class="close-cart"><i class="fa-solid fa-circle-xmark"></i></span>
+        
+        <div id="empty-favorites" class="empty-state">
+            <i class="far fa-heart"></i>
+            <h3>No favorites yet</h3>
+            <p>Start adding products you love by clicking the heart icon</p>
+            <a href="index.html" class="btn">Browse Products</a>
         </div>
 
-        <div class="cart-items">
-            <!-- Cart items will be dynamically added here -->
-        </div>
-
-        <div class="cart-footer">
-            <div class="total-details">
-                <h3 class="total-word">Total</h3>
-                <h3>$ <span class="total-price">0.00</span></h3>
-            </div>
-            <button class="checkout-btn">Proceed to Checkout</button>
-        </div>
-    </div>
-    
-            <!-- footer -->
+    <!-- footer -->
     <footer class="footer">
     <div class="footer-container">
         <div class="footer-col brand">
@@ -133,11 +119,7 @@
         </div>
     </div>
 
-</footer>
-
-
+    </footer>
+    <script src="js/favorites.js"></script>
 </body>
-<script src="js/products.js"></script>
-<script src="js/cart.js"></script>
-<script src="js/favorites.js"></script>
 </html>
