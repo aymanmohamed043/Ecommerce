@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Checkout | Ayman Mini Market</title>
+
+    <!-- main site css + icons -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+
+    <!-- checkout specific css -->
+    <link rel="stylesheet" href="css/checkout.css" />
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="top-header">
+            <div class="container">
+                <!-- <a href="" class="logo"> <img src="assets/icons/logo.png" alt="Ayman | Mini Market logo"></a> -->
+                <a href="" class="logo">
+                    <h1>AYMAN</h1>
+                </a>
+                <form action="" class="search-box">
+                    <div class="select-box">
+                        <select name="category" id="category">
+                            <option value="All Categories">All Categories</option>
+                            <option value="Electronics & Digital">Electronics & Digital</option>
+                            <option value="Fashion & Clothing">Fashion & Clothing</option>
+                            <option value="Phone & Tablet">Phone & Tablet</option>
+                            <option value="Television & Monitor">Television & Monitor</option>
+                            <option value="Jewelry & Watches">Jewelry & Watches</option>
+                            <option value="Washing & Machines">Washing Machines</option>
+                            <option value="Toys & Hobbies">Toys & Hobbies</option>
+                        </select>
+                    </div>
+                    <input type="text" name="search" placeholder="Search for products..." id="input-search">
+                    <button type="submit" class="search-btn">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+                <div class="header-icons">
+                    <div class="icon" id="favorite-icon">
+                        <a href="#">
+                            <i id="favorites-icon" class="fa-solid fa-heart"></i>
+                            <span class="count count-favorites" id="count-favorites">0</span>
+                        </a>
+                    </div>
+                    <div class="icon" id="cart-icon">
+                        <a href="#">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="count count-cart" id="cart-count">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-header">
+            <div class="container">
+                <div class="nav">
+                    <div class="category-btn">
+                        <i class="fa-solid fa-bars"></i>
+                        <p>Browse Category</p>
+                        <i class="fa-solid fa-caret-down"></i>
+                    </div>
+
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                    </ul>
+                </div>
+                <div class="singin-singup btns">
+                    <a href="#" class="btn">Sign In <i class="fa-solid fa-right-to-bracket"></i></a>
+                    <a href="#" class="btn">Sign Up <i class="fa-solid fa-user-plus"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="checkout-section container">
+        <h2 class="checkout-title">Checkout</h2>
+
+        <div class="checkout-container">
+
+            <!-- LEFT: Order Summary -->
+            <div class="summary-box" aria-live="polite" aria-atomic="true">
+                <h3>Order Summary</h3>
+                <div class="summary-items" id="summary-items" role="list"></div>
+
+                <div class="summary-total">
+                    <span>Subtotal</span>
+                    <span>$<span id="checkout-total">0.00</span></span>
+                </div>
+            </div>
+
+            <!-- RIGHT: Billing / Payment -->
+            <form id="checkout-form" class="checkout-form" novalidate>
+                <h3>Billing Information</h3>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full name</label>
+                        <input id="name" type="text" placeholder="Your full name" required />
+                        <div class="error" id="err-name">Please enter your name (min 2 chars).</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input id="email" type="email" placeholder="you@mail.com" required />
+                        <div class="error" id="err-email">Please enter a valid email.</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea id="address" rows="3" placeholder="Street, City, State, ZIP" required></textarea>
+                    <div class="error" id="err-address">Please enter a valid address (min 8 chars).</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Payment Method</label>
+                    <div class="payment-methods" id="payment-methods">
+                        <label class="pm-option"><input type="radio" name="payment-method" value="card" /> Card
+                            (Simulated)</label>
+                        <label class="pm-option"><input type="radio" name="payment-method" value="cod" /> Cash on
+                            Delivery</label>
+                        <label class="pm-option"><input type="radio" name="payment-method" value="paypal" /> PayPal
+                            (Simulated)</label>
+                    </div>
+                    <div class="error" id="err-payment">Please select a payment method.</div>
+                </div>
+
+                <!-- Card Inputs -->
+                <div id="card-details" aria-hidden="true">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="card-name">Name on card</label>
+                            <input id="card-name" type="text" placeholder="Full name on card" />
+                            <div class="error" id="err-card-name">Required.</div>
+                        </div>
+                    </div>
+
+                    <div class="form-row" style="margin-top:8px">
+                        <div class="form-group">
+                            <label for="card-number">Card number</label>
+                            <input id="card-number" type="text" inputmode="numeric" placeholder="1234 5678 9012 3456"
+                                maxlength="19" />
+                            <div class="error" id="err-card-number">Enter a valid card number (digits only).</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="card-exp">Expiry (MM/YY)</label>
+                            <input id="card-exp" type="text" placeholder="MM/YY" maxlength="5" />
+                            <div class="error" id="err-card-exp">Enter a valid expiry (MM/YY).</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="card-cvv">CVV</label>
+                            <input id="card-cvv" type="text" inputmode="numeric" maxlength="4" placeholder="123" />
+                            <div class="error" id="err-card-cvv">Enter a valid 3-4 digit CVV.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="place-order" class="checkout-btn" type="submit">Place Order</button>
+                <div id="success-message" class="success-message" role="status" aria-live="polite"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h2 class="footer-logo">Ayman Market</h2>
+                <p>Fresh products at your fingertips.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="favorites.html">Favorites</a></li>
+                    <li><a href="#">Shop</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/checkout.js"></script>
+</body>
+
+</html>

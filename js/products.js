@@ -5,7 +5,7 @@ function renderProduct(product, salePercentage) {
     return `
         <div class="product-card">
             <span class="sale-persentage">${salePercentage}%</span>
-            <span class="add-to-favorites">
+            <span class="add-to-favorites" data-id="${product.id}">
                 <i class="fa-regular fa-heart"></i>
             </span>
             <div class="product-img">
@@ -24,6 +24,15 @@ function renderProduct(product, salePercentage) {
         </div>
     `;
 }
+const inp = document.getElementById("input-search");
+const cat = document.getElementById("category");
+const form = document.querySelector(".search-box");
+
+form.addEventListener("submit" , (e) => {
+    e.preventDefault()
+    loadHomeProducts()
+
+})
 
 async function loadHomeProducts() {
     try {
@@ -31,9 +40,14 @@ async function loadHomeProducts() {
         const products = await response.json();
         const homeProducts = products
         const productsContainer = document.getElementById("home-products");
+       
 
         productsContainer.innerHTML = ""; // clear old
-        homeProducts.forEach(product => {
+
+        console.log("hello" , cat.value);
+        
+        homeProducts.filter(item => item.title.toLowerCase().includes(inp.value.toLowerCase()) && (cat.value ? item.category.includes(cat.value) : true)
+    ).forEach(product => {
             const salePercentage = parseInt(Math.random() * 20 + 5);
             productsContainer.innerHTML += renderProduct(product, salePercentage);
         });

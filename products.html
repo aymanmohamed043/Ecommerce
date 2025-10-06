@@ -13,19 +13,20 @@
             <div class="top-header">
                 <div class="container">
                     <!-- <a href="" class="logo"> <img src="assets/icons/logo.png" alt="Ayman | Mini Market logo"></a> -->
-                    <a href="" class="logo"><h1>AYMAN</h1></a>
+                    <a href="" class="logo"><h1>MiniMart</h1></a>
                     <form action="" class="search-box">
                         <div class="select-box">
                             <select name="category" id="category">
-                                <option value="All Categories">All Categories</option>
-                                <option value="Electronics & Digital">Electronics & Digital</option>
-                                <option value="Fashion & Clothing">Fashion & Clothing</option>
-                                <option value="Phone & Tablet">Phone & Tablet</option>
+                                <option value="">All Categories</option>
+                                <option value="electronics">Electronics & Digital</option>
+                                <option value="mobiles">Fashion & Clothing</option>
+                                <option value="appliances">Phone & Tablet</option>
                                 <option value="Television & Monitor">Television & Monitor</option>
                                 <option value="Jewelry & Watches">Jewelry & Watches</option>
-                                <option value="Washing & Machines">Washing Machines</option>
+                                <option value="Washing Machines">Washing & Machines</option>
                                 <option value="Toys & Hobbies">Toys & Hobbies</option>
                             </select>
+
                         </div>
                         <input type="text" name="search" placeholder="Search for products..." id="input-search">
                         <button type="submit" class="search-btn">
@@ -33,10 +34,10 @@
                         </button>
                     </form>
                     <div class="header-icons">
-                        <div class="icon">
+                        <div class="icon" id="favorite-icon">
                             <a href="#">
-                                <i class="fa-regular fa-heart"></i>
-                                <span class="count count-favorites">0</span>
+                                <i id="favorites-icon" class="fa-solid fa-heart"></i>
+                                <span class="count count-favorites" id="count-favorites">0</span>
                             </a>
                         </div>
                         <div class="icon" id="cart-icon">
@@ -61,7 +62,6 @@
                         <ul class="nav-links">
                             <li><a href="index.html">Home</a></li>
                             <li><a href="products.html">Products</a></li>
-                            <li><a href="#">Favorites</a></li>
                         </ul>
                     </div>
                     <div class="singin-singup btns">
@@ -95,15 +95,27 @@
                 <h3 class="total-word">Total</h3>
                 <h3>$ <span class="total-price">0.00</span></h3>
             </div>
-            <button class="checkout-btn">Proceed to Checkout</button>
+            <button class="checkout-btn"><a href="checkout.html">Proceed to Checkout</a></button>
         </div>
     </div>
-    
+    <!-- favorites section -->
+    <div class="favorites">
+        <div class="top-favorites">
+            <h3 class="favorites-title">
+                Number of items in your favorites : <span class="favorites-count">0</span>
+            </h3>
+            <span class="close-favorites"><i class="fa-solid fa-circle-xmark"></i></span>
+        </div>
+
+        <div class="favorites-items"></div>
+    </div>
+
+
             <!-- footer -->
     <footer class="footer">
     <div class="footer-container">
         <div class="footer-col brand">
-        <h2 class="footer-logo">AYMAN</h2>
+        <h2 class="footer-logo">MiniMart</h2>
         <p>Your trusted source for the best quality products online.</p>
         </div>
 
@@ -112,7 +124,7 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="products.html">Products</a></li>
-                <li><a href="favorites.html">Favorites</a></li>
+
             </ul>
         </div>
 
@@ -140,4 +152,5 @@
 <script src="js/products.js"></script>
 <script src="js/cart.js"></script>
 <script src="js/favorites.js"></script>
+
 </html>

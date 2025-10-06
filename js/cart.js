@@ -6,19 +6,19 @@ const totalPriceElement = document.querySelector(".total-price");
 const cartContainer = document.querySelector(".cart-items");
 const cartIconCount = document.getElementById("cart-count");
 
-// 🔹 Load cart from localStorage
+//  Load cart from localStorage
 let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
 // Toggle cart
 cartIcon.addEventListener("click", () => cart.classList.add("active"));
 closeCart.addEventListener("click", () => cart.classList.remove("active"));
 
-// 🔹 Save cart to localStorage
+//  Save cart to localStorage
 function saveCart() {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
 }
 
-// 🔹 Render cart UI
+//  Render cart UI
 function renderCart() {
     cartContainer.innerHTML = "";
     cartItems.forEach(item => {
@@ -122,5 +122,5 @@ document.addEventListener("click", async (e) => {
     }
 });
 
-// 🔹 Initialize cart on page load
+//  Initialize cart on page load
 renderCart();
